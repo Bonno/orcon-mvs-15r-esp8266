@@ -1,5 +1,6 @@
 # Orcon MVS-15R Wifi control
-I forked this project from [@llevering] to publish my own changes and adjustments.
+I forked this project from [@llevering](https://github.com/llevering).
+ to publish my own changes and adjustments.
 By default the Orcon mechanical ventilation unit doesn't support any 'smart' connectivity. With help from a forum a topic on Tweakers (dutch)[^1] I gathered a good deal of information and ideas on how to make this device 'smart'.
 
 ![Schematic](Schematic_Orcon_MV_Control.png)
