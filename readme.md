@@ -2,7 +2,7 @@
 I forked this project from [@llevering] to publish my own changes and adjustments.
 By default the Orcon mechanical ventilation unit doesn't support any 'smart' connectivity. With help from a forum a topic on Tweakers (dutch)[^1] I gathered a good deal of information and ideas on how to make this device 'smart'.
 
-!(Schematic_Orcon_MV_Control.png)
+![Schematic](Schematic_Orcon_MV_Control.png)
 In the file 'Schematic_Orcon_MV_Control.png' you will find the different blocks that together form the schema of the control board. The schematics are designed in EasyEDA, so the file 'SCH_Orcon_MV_Control.json' can be used to import the project in EasyEDA.
 
 Most components should be clear from the schematics, but a few are not self-explainatory:
