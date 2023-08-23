@@ -41,7 +41,7 @@ binary_sensor:
 output:
   - platform: esp8266_pwm
     pin: D5
-    frequency: 1000 Hz
+    frequency: 190 Hz
     id: mv_pwm_out
     inverted: true
 
@@ -50,18 +50,24 @@ switch:
     name: "${devicename} Restart"
   - platform: gpio
     name: "${devicename} unit speed bypass"
-    id: mv_unit_speed_bypass
+    id: mv_fan_speed_bypass
     pin: 
       number: D8
-      inverted: false
+      inverted: false #true 
 
-light:
-  - platform: monochromatic
+fan:
+  - platform: speed
     output: mv_pwm_out
-    name: "${devicename} unit speed"
-    id: mv_unit_speed
-    gamma_correct: 1
-    icon: mdi:fan
+    name: "${devicename} Fan Speed"
+    id: mv_fan_speed
+
+#light:
+#  - platform: monochromatic
+#    output: mv_pwm_out
+#    name: "${devicename} unit speed"
+#    id: mv_unit_speed
+#    gamma_correct: 1
+#    icon: mdi:fan
 
 sensor:
   - platform: uptime
@@ -75,9 +81,9 @@ sensor:
     pin: D2
     name: "${devicename} Tacho"
     force_update: true
-    update_interval: 10s
+    update_interval: 10s #5s
     accuracy_decimals: 0
-    internal_filter: 5ms
+    internal_filter: 5ms #250us
     count_mode:
      falling_edge: INCREMENT
      rising_edge: DISABLE
@@ -85,7 +91,7 @@ sensor:
     pin: D1
     id: mv_speed_requested
     name: "${devicename} Speed Requested"
-    update_interval: 10s
+    update_interval: 2s
     accuracy_decimals: 5
     #internal: true
     on_value:
@@ -119,3 +125,4 @@ text_sensor:
       {
         return {"3"};
       }
+
